@@ -451,7 +451,7 @@ export default function Home() {
               {services.map((item, index) => (
              <motion.li
              key={index}
-             className="group rounded-xl cursor-pointer  bg-[url('/n3.jpg')] bg-cover bg-center px-6 py-8 shadow-sm transition-all duration-300 ease-in-out hover:border-2 hover:border-[#efc987] hover:shadow-lg"
+             className="group rounded-xl cursor-pointer  bg-[url('/n4.jpeg')] bg-cover bg-center px-6 py-8 shadow-sm transition-all duration-300 ease-in-out hover:border-2 hover:border-[#efc987] hover:shadow-lg"
              onClick={() => router.push(item.link)}
              variants={itemVariants}
              whileHover={{ scale: 1.03 }}
