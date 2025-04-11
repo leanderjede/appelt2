@@ -123,6 +123,8 @@ const Page = () => {
         </div>
       </div>
       <div className="mt-12 sm:mt-16 lg:mt-0">
+      <div className="-ml-48 pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+
       <div className="w-[550px] h-[350px] rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 overflow-hidden">
   <img
     alt="Malerarbeiten"
@@ -130,6 +132,7 @@ const Page = () => {
     src="/ap-5.webp"
     className="w-full h-full object-cover"
   />
+</div>
 </div>
 
       </div>
