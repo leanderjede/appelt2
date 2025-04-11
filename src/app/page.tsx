@@ -354,7 +354,7 @@ export default function Home() {
               className="text-3xl font-semibold text-[#473a22] lg:text-4xl"
               variants={slideInFromLeft}
             >
-              Bau von Träumen, Handwerksqualität - Appelt Construction & Renovierung
+              Bau von Träumen, Handwerksqualität - Appelt Konstruktion & Renovierung
               <span className="block w-20 h-1 mt-2 bg-[#8e7444] rounded-full"></span>
             </motion.h1>
 
@@ -449,13 +449,13 @@ export default function Home() {
               variants={containerVariants}
             >
               {services.map((item, index) => (
-                <motion.li
-                  key={index}
-                  className="group rounded-xl cursor-pointer bg-white px-6 py-8 shadow-sm transition-all duration-300 ease-in-out hover:border-2 hover:border-[#efc987] hover:shadow-lg"
-                  onClick={() => router.push(item.link)}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.03 }}
-                >
+             <motion.li
+             key={index}
+             className="group rounded-xl cursor-pointer  bg-[url('/n3.jpg')] bg-cover bg-center px-6 py-8 shadow-sm transition-all duration-300 ease-in-out hover:border-2 hover:border-[#efc987] hover:shadow-lg"
+             onClick={() => router.push(item.link)}
+             variants={itemVariants}
+             whileHover={{ scale: 1.03 }}
+           >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -467,8 +467,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                   </svg>
                 
-                  <h3 className="my-3 font-display font-medium text-[#473a22]">{item.title}</h3>
-                  <p className="mt-1.5 text-sm leading-6 text-[#6b5733]">
+                  <h3 className="my-3 font-display  text-[#473a22] font-bold">{item.title}</h3>
+                  <p className="mt-1.5 text-sm leading-6 text-black font-semibold">
                     {item.description}
                   </p>
                 </motion.li>
@@ -511,7 +511,7 @@ export default function Home() {
               className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
               variants={containerVariants}
             >
-              {[2, 3, 4, 5, 5, 6, 7, 8, 10, 11, 12, 13].map((num, index) => (
+              {[2, 3, 4,  5, 6, 7, 8, 10, 11, 12, 13].map((num, index) => (
                 <motion.div 
                   key={index}
                   className="flex justify-center items-center overflow-hidden rounded-lg shadow-lg hover:shadow-[#d1bd99]/50 transition-all duration-300"
