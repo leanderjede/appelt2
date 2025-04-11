@@ -29,7 +29,7 @@ const Page = () => {
  <li> Klärung aller offenen Fragen </li>
  <li> Individuelles Angebot im Anschluss</li>
   </ul>
-              <button className = "px-5 mt-10 py-5 max-sm:px-3 max-sm:py-3 bg-[#241d11]"> NOW-Kontakt </button> 
+              <button className = "px-5 mt-10 py-5 max-sm:px-3 max-sm:py-3 bg-[#241d11]"> Kontakt </button> 
             {/* Google Rating */}
             <div className="mt-6 text-left">
               <p className="text-lg">

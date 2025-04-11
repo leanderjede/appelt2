@@ -55,7 +55,7 @@ const Gallery = () => {
   return (
     <>
       {/* Middle Section */}
-      <section className="w-full flex items-center justify-center h-screen rounded-b-2xl overflow-hidden bg-gradient-to-b from-[#121212] to-gray-800">
+      <section className={`w-full flex items-center justify-center h-screen rounded-b-2xl overflow-hidden bg-gradient-to-b from-[#121212] to-gray-800 ${isModalOpen ? "hidden" :""}`}>
         {/* Overlay for better text visibility */}
         <div className="absolute inset-0 bg-[#00000025]" />
         {/* Content */}
@@ -134,22 +134,29 @@ const Gallery = () => {
         </div>
 
         {/* Modal for Full-Screen Image */}
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={closeModal}
-          contentLabel="Full-Screen Image"
-          className="fixed inset-0 py-22 flex z-50 items-center justify-center bg-black bg-opacity-90"
-          overlayClassName="fixed inset-0"
-        >
-          <div className="relative">
-            <img
-              src={selectedImage}
-              alt="Full-Screen"
-              className="max-w-full max-h-screen rounded-lg"
-            />
-        
-          </div>
-        </Modal>
+      {/* Modal for Full-Screen Image */}
+<Modal
+  isOpen={isModalOpen}
+  onRequestClose={closeModal}
+  contentLabel="Full-Screen Image"
+  className="fixed inset-0 py-22 flex z-50 items-center justify-center bg-[#f8f5f0] "
+  overlayClassName="fixed inset-0"
+>
+  <div className="relative">
+    <button
+      onClick={closeModal}
+      className="absolute top-4 right-4 bg-white text-black rounded-full px-3 py-1 text-sm font-semibold hover:bg-gray-200 transition"
+    >
+      ✕
+    </button>
+    <img
+      src={selectedImage}
+      alt="Full-Screen"
+      className="max-w-full max-h-screen rounded-lg"
+    />
+  </div>
+</Modal>
+
       </div>
     </>
   );
