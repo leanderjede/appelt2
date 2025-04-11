@@ -1,5 +1,4 @@
 // import TestimonialSlider from '@/app/component/Ui/ReviewSlider';
-import ServiceSlide from '@/app/component/Ui/Swiperslide';
 import React from 'react';
 
 const Page = () => (
