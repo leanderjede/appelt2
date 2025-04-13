@@ -312,6 +312,8 @@ export default function Home() {
     <div className="bg-[#f8f5f0]">
       {/* Hero Section */}
       <div className="relative w-full h-screen overflow-hidden">
+      <div className="absolute inset-0 bg-black z-0"></div> {/* Black background layer */}
+
       <AnimatePresence mode="wait">
         <motion.div
           key={images[current]}
