@@ -1,9 +1,24 @@
 'use client'
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import PartnerSlider from "./component/Ui/PartnerSwiper";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+
+const images = [
+  "/slider/s1.jpg",
+"/slider/s2.jpg",
+"/slider/s3.jpg",
+"/slider/s4.jpg",
+"/slider/s5.jpg",
+"/slider/s6.jpg",
+"/slider/s7.jpg",
+"/slider/s8.jpg",
+"/slider/s9.jpg",
+"/slider/s10.jpg",
+"/slider/s11.jpg",
+];
 
 const services = [
   {
@@ -220,6 +235,15 @@ const services = [
 
 export default function Home() {
   const router = useRouter();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 5000); // change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Animation variants
   const containerVariants = {
@@ -288,58 +312,47 @@ export default function Home() {
     <div className="bg-[#f8f5f0]">
       {/* Hero Section */}
       <div className="relative w-full h-screen overflow-hidden">
-        <Image
-          src={'/bg-ap.jpeg'}
-          alt="construction website"
-          width={1000}
-          height={1000}
-          className="w-full h-screen object-cover"
-          priority
-        />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={images[current]}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute w-full h-full"
+        >
+          <Image
+            src={images[current]}
+            alt="Hero Background"
+            fill
+            className="object-cover w-full h-full"
+            priority
+          />
+        </motion.div>
+      </AnimatePresence>
 
-        <div className="absolute inset-0 bg-[#01010162] bg-opacity-10 px-4 md:px-12">
-          <motion.div 
-            className="flex flex-col justify-center items-start text-white h-full"
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
+      <div className="absolute inset-0 bg-[#01010162] px-4 md:px-12 flex items-center">
+        <motion.div
+          className="text-white max-w-3xl"
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+            Willkommen bei Appelt-Bauservice!
+          </h1>
+          <p className="mt-4 md:text-lg text-sm leading-relaxed">
+            Ihr Zuhause verdient das Beste – wir bauen nicht nur Wände, sondern schaffen Räume zum Leben.
+          </p>
+          <button
+            className="mt-8 px-6 py-3 bg-amber-900 hover:bg-[#6b5733] text-white font-bold rounded-lg shadow-lg transition-all duration-300"
+            onClick={() => router.push("/contact")}
           >
-            <motion.h1 
-              className="text-2xl md:text-3xl font-extrabold text-left leading-tight"
-              variants={slideInFromLeft}
-            >
-              Willkommen bei Appelt-Bauservice!
-            </motion.h1>
-
-            <motion.p 
-              className="mt-2 lg:mt-5 text-sm md:text-lg text-left max-w-2xl leading-relaxed"
-              variants={slideInFromLeft}
-              transition={{ delay: 0.2 }}
-            >
-              Ihr Zuhause verdient das Beste – wir bauen nicht nur Wände, sondern schaffen Räume zum Leben. Ob Renovierung, Sanierung oder Neubau – mit uns haben Sie einen verlässlichen Partner an Ihrer Seite.
-            </motion.p>
-
-            <motion.button 
-              className="px-5 mt-10 py-5 max-sm:px-3 max-sm:py-3 bg-amber-900 hover:bg-[#6b5733] text-white font-bold rounded-lg shadow-lg transition-all duration-300 cursor-pointer"
-              onClick={() => router.push('/contact')}
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ delay: 0.4 }}
-            >
-              Kontaktieren Sie uns
-            </motion.button>
-
-            <motion.div 
-              className="mt-6 text-left"
-              variants={fadeIn}
-              transition={{ delay: 0.6 }}
-            >
-             
-            </motion.div>
-          </motion.div>
-        </div>
+            Kontaktieren Sie uns
+          </button>
+        </motion.div>
       </div>
+    </div>
 
       {/* About Section */}
       <section className="bg-[#f8f5f0] py-12 md:py-20">
