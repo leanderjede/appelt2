@@ -6,40 +6,45 @@ import { Autoplay } from "swiper/modules"; // Only import Autoplay
 const testimonials = [
   {
     id: 1,
-    name: "Sheryl Berge",
-    text: "Applet hat meinen Arbeitsablauf komplett optimiert. Die Benutzeroberfläche ist intuitiv, und die Integrationen machen es zu einem vielseitigen Tool. Sehr empfehlenswert für alle, die ihre Produktivität steigern möchten!.",
-    image: "https://randomuser.me/api/portraits/men/15.jpg",
+    name: "Frank Paweski, Berlin",
+    text: "Dach: 3 Fenster; Neueinbau; Dachfenster, Oberlicht, Dachluke, SonneLösungsorientiert und schnell, Kann ich nur weiterempfehlen ",
+    image: "https://randomuser.me/api/portraits/men/20.jpg",
   },
   {
     id: 2,
-    name: "Leland Kiehn",
-    text: "Ich liebe es, Applet für die Automatisierung von Aufgaben zu nutzen. Es spart mir so viel Zeit. Allerdings wären ein paar mehr Anpassungsmöglichkeiten wünschenswert. Insgesamt aber großartig!",
-    image: "https://randomuser.me/api/portraits/women/15.jpg",
+    name: "MyHammer-Kunde aus Hohen Neuendorf",
+    text: "Bodenbelag reparieren: Holzdielen, Anbringen neuer Fußbodenleisen u...Sehr freundlicher Kontakt, ordentliche Abwicklung und zeitnahe Kommunikation.",
+    image: "https://randomuser.me/api/portraits/men/21.jpg",
   },
   {
     id: 3,
-    name: "Peter Renolds",
-    text: "Unser Team nutzt Applet, und es hat wirklich alles verändert. Die Zusammenarbeit an Projekten und das Automatisieren wiederholender Aufgaben war noch nie so einfach.",
-    image: "https://randomuser.me/api/portraits/men/10.jpg",
+    name: "Uwe, Berlin",
+    text: "Sonnenschutz: Terrassen-Überdachung; Installieren Keine langen Wartezeiten schnell und effizient immer wieder",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
   },
   {
     id: 4,
-    name: "ronal jack",
-    text: "Applet ist im Allgemeinen hilfreich, aber es gibt gelegentlich kleine Fehler. Der Kundenservice ist jedoch sehr reaktionsschnell, was ein Pluspunkt ist. Ich hoffe, dass es weiter verbessert wird!.",
-    image: "https://randomuser.me/api/portraits/men/11.jpg",
+    name: "Unbekannter Kunde",
+    text: "Innentür: 2 Türen; Nach Rücksprache; Neue Tür und neuen Türrahmen e... Top Firma",
+    image: "https://randomuser.me/api/portraits/men/23.jpg",
   },
   {
     id: 5,
-    name: "jackless anckles",
-    text: "TIch konnte so viele meiner täglichen Aufgaben mit Applet automatisieren. Es hat mir Stunden an manueller Arbeit erspart. Die Lernkurve ist minimal, sodass es für jeden zugänglich ist.",
-    image: "https://randomuser.me/api/portraits/men/12.jpg",
+    name: "Regina, Berlin",
+    text: "Fenstereinbau: 1 Fenster; Kaufen, Installieren; Balkontür Schnelle Terminvereinbarung, schnelle und saubere Auftragsabwicklung. Wir sind sehr zufrieden mit der ausgeführten Arbeit. Vielen DANK",
+    image: "https://randomuser.me/api/portraits/women/24.jpg",
   },
-  // Add more testimonials as needed
+  {
+    id: 6,
+    name: "MyHammer-Kunde aus Wandlitz",
+    text: "Innentür: 4 Türen; Einfache Tür; Türen kürzen Kommunikation lief gut, zuverlässig und schnell. Ergebnis ist top!",
+    image: "https://randomuser.me/api/portraits/men/25.jpg",
+  },
 ];
 
 const TestimonialsSlider = () => {
   return (
-    <section id="testimonials" aria-label="What our customers are saying" className="bg-slate-50 py-20 sm:py-32">
+    <section id="testimonials" aria-label="What our customers are saying" className="0 py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
@@ -70,33 +75,39 @@ const TestimonialsSlider = () => {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
-              <figure className="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
-                <svg
-                  aria-hidden="true"
-                  width="105"
-                  height="78"
-                  className="absolute left-6 top-6 fill-slate-100"
-                >
-                  <path d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z" />
-                </svg>
-                <blockquote className="relative">
-                  <p className="text-lg tracking-tight text-slate-900">{testimonial.text}</p>
-                </blockquote>
-                <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                  <div>
-                    <div className="font-display text-base text-slate-900">{testimonial.name}</div>
-                  </div>
-                  <div className="overflow-hidden rounded-full bg-slate-50">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      width={56}
-                      height={56}
-                      className="h-14 w-14 object-cover"
-                    />
-                  </div>
-                </figcaption>
-              </figure>
+       <figure className="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+  <svg
+    aria-hidden="true"
+    width="105"
+    height="78"
+    className="absolute left-6 top-6 fill-slate-100"
+  >
+    <path d="..." />
+  </svg>
+  <blockquote className="relative">
+    <p className="text-lg tracking-tight text-slate-900">{testimonial.text}</p>
+  </blockquote>
+  <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+    <div>
+      <div className="flex items-center mb-1">
+        {/* Example: render 5 filled stars */}
+        {[...Array(5)].map((_, i) => (
+          <svg
+            key={i}
+            className="h-4 w-4 text-yellow-500 mr-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.01 3.114a1 1 0 00.95.69h3.283c.969 0 1.371 1.24.588 1.81l-2.659 1.932a1 1 0 00-.364 1.118l1.01 3.114c.3.921-.755 1.688-1.538 1.118l-2.659-1.932a1 1 0 00-1.175 0l-2.659 1.932c-.783.57-1.838-.197-1.538-1.118l1.01-3.114a1 1 0 00-.364-1.118L2.22 8.541c-.783-.57-.38-1.81.588-1.81h3.283a1 1 0 00.95-.69l1.01-3.114z" />
+          </svg>
+        ))}
+      </div>
+      <div className="font-display text-base text-slate-900">{testimonial.name}</div>
+    </div>
+  
+  </figcaption>
+</figure>
+
             </SwiperSlide>
           ))}
         </Swiper>

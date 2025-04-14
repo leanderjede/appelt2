@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const JobsPage = () => {
@@ -42,12 +43,12 @@ const JobsPage = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Aktuelle Stellenangebote</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {positions.map((position, index) => (
-                <div key={index} className="flex items-center p-4 bg-[#f8f5f0] rounded-lg">
+                <Link key={index} className="flex items-center p-4 bg-[#f8f5f0] rounded-lg" href={`/job/${position.toLowerCase()}`}>
                   <svg className="h-6 w-6 text-[#f8f5f0]0 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                   <span className="text-lg font-medium text-gray-700">{position}</span>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

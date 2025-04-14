@@ -5,6 +5,7 @@ import PartnerSlider from "./component/Ui/PartnerSwiper";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import TestimonialsSlider from "./component/Ui/ReviewSlider";
 
 const images = [
   "/slider/s1.jpg",
@@ -636,6 +637,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <TestimonialsSlider/>
     </div>
   );
 }
